@@ -1,0 +1,75 @@
+Data Quality: 
+
+Concern: There are repeated entries for the same Person ID (e.g., Person ID 123456789). Should we handle or investigate these duplicates before loading? 
+
+Concern: The "Audited" column contains NULL values. How should we handle missing values, and is it critical for the analysis? 
+
+Question: Are the data types for each column aligned with the database schema, especially considering the mixed data types in the "Who Audited" column (names and NULL)? 
+
+Question: Are there any specific requirements or standards for the date format in the "Date Created" column? Are all dates in the same format? 
+
+Concern: The "Who Audited" column contains names. Should we validate these names against a reference list or ensure there is consistency in naming conventions? 
+
+Question: Are there any constraints on the range of values for the "Amount" column? Are negative values allowed? 
+
+Concern: Are there constraints or validations for the "Person ID" column to ensure it corresponds to valid individuals in the system? 
+
+Question: What does the "Audited" column represent (values 0 and 1)? Should we consider mapping these to more descriptive labels for clarity? 
+
+Data Source and Origin: 
+
+Question: Where did the client source this data, and are there any specific considerations or concerns related to the data's origin? 
+
+Question: Is it coming from multiple sources or a single source? 
+
+Question: How often is the data refreshed? New rows are added. 
+
+Audit Trail: 
+
+Concern: The dataset seems to represent an audit trail, given the "Who Audited" and "Audited" columns. Are there specific requirements for maintaining this audit trail in the database? 
+
+Business Requirement: 
+
+What business questions need to be answered after uploading this data? 
+
+Performance: 
+
+How large is the dataset? Will the volume impact database performance? 
+
+Do we have indexes on columns frequently used for querying? 
+
+Are there any long-running queries that might impact database performance during the data load? 
+
+Have we considered the optimal data types for each column to balance storage and query performance? 
+
+PII (Personally Identifiable Information): 
+
+Does the dataset contain any sensitive personal information (PII)? 
+
+Is the Person ID field considered PII, and if so, how will it be handled to ensure privacy? 
+
+Should we implement encryption or other security measures for certain columns? 
+
+Have we considered data anonymization techniques if PII is present and unnecessary for analysis? 
+
+Data Relationships: 
+
+Are there relationships with other existing datasets, and how will they be managed? 
+
+Do we need to establish foreign key relationships for integrity? 
+
+Data Use and Access: 
+
+Who will have access to this data, and what level of permissions should be granted? 
+
+Have we considered implementing role-based access control (RBAC)? 
+
+Data Retention: 
+
+What is the retention policy for this data? Do we need to archive or purge old records? 
+
+ 
+
+These questions and concerns aim to ensure the data's quality, consistency, and compatibility with the company's database and business requirements before proceeding with the data load.  
+
+Addressing these questions will help ensure a smooth and secure data loading process, balancing performance considerations with data quality and privacy concerns. 
