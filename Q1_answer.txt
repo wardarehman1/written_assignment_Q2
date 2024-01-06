@@ -1,4 +1,4 @@
-Data Quality: 
+**Data Quality:**
 
 Concern: There are repeated entries for the same Person ID (e.g., Person ID 123456789). Should we handle or investigate these duplicates before loading? 
 
